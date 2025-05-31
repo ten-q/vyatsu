@@ -1,0 +1,621 @@
+﻿/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f5f9ff;
+    color: #333;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.кнопка {
+    display: inline-block;
+    background-color: #4a90e2;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+    .кнопка:hover {
+        background-color: #357abd;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+h1, h2, h3, h4 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin: 40px 0 30px;
+    position: relative;
+}
+
+    h2:after {
+        content: '';
+        display: block;
+        width: 80px;
+        height: 4px;
+        background: #4a90e2;
+        margin: 15px auto 0;
+        border-radius: 2px;
+    }
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+p {
+    margin-bottom: 15px;
+    color: #555;
+}
+
+/* Шапка */
+header {
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.логотип img {
+    height: 50px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+    nav ul li {
+        margin-left: 30px;
+    }
+
+        nav ul li a {
+            font-weight: 600;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+            nav ul li a:hover {
+                color: #4a90e2;
+            }
+
+            nav ul li a:after {
+                content: '';
+                position: absolute;
+                width: 0;
+                height: 2px;
+                background: #4a90e2;
+                bottom: -5px;
+                left: 0;
+                transition: width 0.3s;
+            }
+
+            nav ul li a:hover:after {
+                width: 100%;
+            }
+
+.бургер-меню {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Реклама */
+.реклама {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    z-index: 999;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.реклама-ссылка {
+    display: block;
+    position: relative;
+}
+
+.реклама-контент {
+    padding: 15px;
+}
+
+    .реклама-контент h3 {
+        color: #e74c3c;
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+
+    .реклама-контент p {
+        color: #666;
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+    }
+
+    .реклама-контент img {
+        width: 100%;
+        border-radius: 5px;
+        margin-top: 10px;
+    }
+
+.крестик {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.3);
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+    .крестик:hover {
+        background: rgba(0, 0, 0, 0.5);
+        transform: rotate(90deg);
+    }
+
+/* Герой секция */
+.герой {
+    display: flex;
+    align-items: center;
+    padding: 80px 5%;
+    background: linear-gradient(135deg, #e3f2fd 0%, #f5f9ff 100%);
+}
+
+.герой-контент {
+    flex: 1;
+    padding-right: 40px;
+}
+
+    .герой-контент h1 {
+        font-size: 3rem;
+        margin-bottom: 20px;
+        color: #2c3e50;
+    }
+
+    .герой-контент p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+        color: #555;
+    }
+
+.герой-видео {
+    flex: 1;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+    .герой-видео video {
+        width: 100%;
+        display: block;
+    }
+
+/* Преимущества */
+.преимущества {
+    padding: 80px 5%;
+    background-color: white;
+}
+
+.преимущества-грид {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.преимущество {
+    text-align: center;
+    padding: 30px 20px;
+    background: #f5f9ff;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+    .преимущество:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 25px rgba(74, 144, 226, 0.2);
+    }
+
+    .преимущество i {
+        font-size: 3rem;
+        color: #4a90e2;
+        margin-bottom: 20px;
+    }
+
+/* Факультеты */
+.факультеты {
+    padding: 80px 5%;
+    background: linear-gradient(135deg, #f5f9ff 0%, #e3f2fd 100%);
+}
+
+.факультеты-грид {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.факультет {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+    .факультет:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .факультет img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        margin-bottom: 20px;
+    }
+
+    .факультет .кнопка {
+        padding: 8px 20px;
+        font-size: 0.9rem;
+    }
+
+/* Новости */
+.новости {
+    padding: 80px 5%;
+    background-color: white;
+}
+
+.новости-грид {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.новость {
+    background: #f5f9ff;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+    .новость:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 25px rgba(74, 144, 226, 0.2);
+    }
+
+    .новость img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+
+.новость-контент {
+    padding: 20px;
+}
+
+.новость .кнопка {
+    padding: 8px 20px;
+    font-size: 0.9rem;
+    margin-top: 15px;
+    display: inline-block;
+}
+
+/* Контакты */
+.контакты {
+    padding: 80px 5%;
+    background: linear-gradient(135deg, #e3f2fd 0%, #f5f9ff 100%);
+}
+
+.контакты-контейнер {
+    display: flex;
+    gap: 40px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.карта {
+    flex: 1;
+    min-width: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.контактная-информация {
+    flex: 1;
+    min-width: 300px;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+    .контактная-информация p {
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+    }
+
+    .контактная-информация i {
+        margin-right: 10px;
+        color: #4a90e2;
+        width: 20px;
+        text-align: center;
+    }
+
+.соцсети {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+    .соцсети a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        background: #4a90e2;
+        color: white;
+        border-radius: 50%;
+        transition: all 0.3s ease;
+    }
+
+        .соцсети a:hover {
+            background: #357abd;
+            transform: translateY(-3px);
+        }
+
+/* Подвал */
+footer {
+    background: #2c3e50;
+    color: white;
+    padding: 60px 5% 30px;
+}
+
+.футер-контент {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.футер-секция {
+    flex: 1;
+    min-width: 200px;
+}
+
+    .футер-секция h4 {
+        color: white;
+        margin-bottom: 20px;
+        font-size: 1.2rem;
+    }
+
+    .футер-секция ul {
+        list-style: none;
+    }
+
+        .футер-секция ul li {
+            margin-bottom: 10px;
+        }
+
+            .футер-секция ul li a {
+                transition: color 0.3s;
+            }
+
+                .футер-секция ul li a:hover {
+                    color: #4a90e2;
+                }
+
+.копирайт {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+    .копирайт p {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.9rem;
+    }
+
+/* Тест */
+.тест-контейнер {
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 0 5%;
+}
+
+    .тест-контейнер p {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+.вопрос {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+    .вопрос h3 {
+        margin-bottom: 15px;
+    }
+
+    .вопрос label {
+        display: block;
+        margin-bottom: 10px;
+        padding: 10px 15px;
+        background: #f5f9ff;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+
+        .вопрос label:hover {
+            background: #e3f2fd;
+        }
+
+    .вопрос input[type="radio"] {
+        margin-right: 10px;
+    }
+
+.результат-теста {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    margin-top: 30px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+    .результат-теста h2 {
+        color: #4a90e2;
+        margin-bottom: 20px;
+    }
+
+    .результат-теста p {
+        margin-bottom: 20px;
+        font-size: 1.1rem;
+    }
+
+    .результат-теста .кнопка {
+        margin: 10px;
+    }
+
+/* Медиа запросы */
+@media (max-width: 1024px) {
+    .реклама {
+        width: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .герой {
+        flex-direction: column;
+        padding: 60px 5%;
+    }
+
+    .герой-контент {
+        padding-right: 0;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+
+        .герой-контент h1 {
+            font-size: 2.5rem;
+        }
+
+    .контакты-контейнер {
+        flex-direction: column;
+    }
+
+    .бургер-меню {
+        display: block;
+    }
+
+    nav ul {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 80px);
+        background: white;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 40px;
+        transition: left 0.3s ease;
+    }
+
+        nav ul.активное {
+            left: 0;
+        }
+
+        nav ul li {
+            margin: 15px 0;
+        }
+
+    .реклама {
+        width: 200px;
+        bottom: 10px;
+        right: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .герой-контент h1 {
+        font-size: 2rem;
+    }
+
+    .реклама {
+        width: 150px;
+    }
+
+    .реклама-контент h3 {
+        font-size: 1rem;
+    }
+
+    .реклама-контент p {
+        font-size: 0.8rem;
+    }
+
+    .крестик {
+        width: 20px;
+        height: 20px;
+        font-size: 0.8rem;
+    }
+}
